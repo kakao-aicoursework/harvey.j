@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "llm-practice"
+version = "0.1.0"
+description = ""
+authors = ["harvey-j <harvey.j@kakaocorp.com>"]
+readme = "README.md"
+packages = [{include = "llm_practice"}]
+
+[tool.poetry.dependencies]
+python = "^3.9.13"
+openai = "^0.28.0"
+pandas = "^2.1.0"
+pynecone = "^0.1.34"
+numpy = "^1.24.1"
+requests = "^2.31.0"
+tqdm = "^4.66.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
