@@ -31,20 +31,20 @@ class State(rx.State):
 
         subject = chainloader.parse_subject_chain.run(context)
 
-        # if subject in db.subject_list:
-        #     context["related_documents"] = db.query(context["user_message"])
-        #     for step in [chainloader.q_step1_chain]:
-        #         context = step(context)
-        #         answer += context[step.output_key]
-        #         answer += "\n\n"
-        # else:
-        print(f"DB has no information about the subject: {subject}")
-        context["related_documents"] = db.query(context["user_message"])
-        context["compressed_web_search_results"] = chainloader._query_web_search(
-            context["user_message"]
-        )
-        answer = chainloader.default_chain.run(context)
-        answer = chainloader.summarizer(answer)
+        if subject in db.subject_list:
+            context["related_documents"] = db.query(context["user_message"])
+            for step in [chainloader.q_step1_chain]:
+                context = step(context)
+                answer += context[step.output_key]
+                answer += "\n\n"
+        else:
+            print(f"DB has no information about the subject: {subject}")
+            context["related_documents"] = db.query(context["user_message"])
+            context["compressed_web_search_results"] = chainloader._query_web_search(
+                context["user_message"]
+            )
+            answer = chainloader.default_chain.run(context)
+            answer = chainloader.summarizer(answer)
 
         log_user_message(history_file, self.user_message)
         log_bot_message(history_file, answer)
