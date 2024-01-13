@@ -1,0 +1,73 @@
+A user asks you <question> about mapper function to parse logs.
+From <question>, identify the very final destination to parse.
+Plus, provide path to each in the provided log.
+(Answer Rule)
+1. If key is not provided in log, then find code lines of the key from <parsing_sample> and identify path to the key.
+2. Despite you have done the above, if you cannot find the key, then just answer "Not found".
+
+Answer:
+The number of keys to parse is (number).
+The path to each key is the following:
+<key_1>:<path to key_1>
+<key_2>:<path to key_2>
+
+
+<question>
+{question}
+</question>
+
+<log>
+{log}
+</log>
+
+<parsing_sample>
+{parsing_sample}
+</parsing_sample>
+
+<example>
+case 1)
+(Question) parsing kk from logs.
+(Log) {{"abcd": "ABCD", "cccc": {{"abab": "ABAB", "aa": [{{"zzzz": "ZZZZ", "xx": "XX"}}]}}}}
+(Parsing Sample)
+def _mapper(row: pyspark.sql.Row) -> pyspark.sql.Row:
+    return pyspark.sql.Row([
+        kk=row.log_data.get('kkkk', dict()).get('kk', ''),
+        ])
+(Answer)
+The number of keys to parse is 4.
+The path to each key is the following:
+kk: kkkk.kk
+
+case 2)
+(Question) parsing abcd, abab in cccc, and zzzz in aa in cccc, kk from logs.
+(Log) {{"abcd": "ABCD", "cccc": {{"abab": "ABAB", "aa": [{{"zzzz": "ZZZZ", "xx": "XX"}}]}}}}
+(Parsing Sample)
+def _mapper(row: pyspark.sql.Row) -> pyspark.sql.Row:
+    aa = row.log_data.get('cccc', dict()).get('aa', [])
+    for aaa in aa:
+       zzzz = aaa.get('zzzz', '')
+       if zzzz:
+           break
+    return pyspark.sql.Row([
+        abcd=row.log_data.get('abcd', ''),
+        abab=row.log_data.get('cccc', dict()).get('abab', 0.0),
+        zzzz=zzzz,
+        ])
+(Answer) 
+The number of keys to parse is 4.
+The path to each key is the following:
+abcd: abcd
+abab: cccc.abab
+zzzz: cccc.aa[].zzzz
+kk: Not found
+
+case 3)
+(Question) 로그에서 abcd, aaaa의 abab, bbbb의 abab를 파싱해줘
+(Log) {{"abcd": "ABCD", "aaaa": {{"abab": "ABAB"}}, "aa": "bb": [{{"zzzz": '"bbbb": {{"abab": "ABAB"'}}}}]}}
+(Answer)
+The number of keys to parse is 3.
+The path to each key is the following:
+abcd: abcd
+abab: aaaa.abab
+zzzz: aa.bb[].zzzz.bbbb.abab
+</example>

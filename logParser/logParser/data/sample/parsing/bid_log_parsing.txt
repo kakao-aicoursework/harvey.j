@@ -1,0 +1,51 @@
+def _mapper(row):
+    log_data = json.loads(row[0])
+    result = dict()
+    dnt = log_data["device"].get("dnt")
+    lmt = log_data["device"].get("lmt")
+    a2Gender = log_data["user"].get("a2Gender")
+    a2AgeBand = log_data["user"].get("a2AgeBand")
+    result["location"] = log_data["user"].get("location", "<unk>")
+    result["location2"] = log_data["user"].get("location2", "<unk>")
+    result["bidrequest_id"] = log_data["bid"]["bidRequestId"]
+    result["bidrequest_dttm"] = log_data["bid"]["bidRequestDttm"]
+    result["time"] = int(time.mktime(datetime.strptime(result["bidrequest_dttm"], "%Y%m%d %H%M%S %f").timetuple()))
+    result["pricing"] = log_data["candidates"][0]["pricing"]
+    ecpm = log_data["candidates"][0]["ecpm"]
+    metrics = json.loads(log_data["rank"].get("metrics", "{}"))
+    result["ecpm"] = float(metrics.get("autobid_winner", {}).get("ecpm", ecpm))
+    result["second_ecpm"] = log_data["candidates"][0]["secondPrice"]
+    result["ssp_ecpm"] = log_data["candidates"][0]["sspPrice"]
+    result["ssp_second_ecpm"] = log_data["candidates"][0]["sspSecondPrice"]
+    result["pcr"] = log_data["candidates"][0].get("pcr", 0.0)
+    result["pctr"], result["pcvr"] = 0.0, 0.0
+    if log_data["candidates"][0].get("ranking", None):
+        ranking_ad = json.loads(log_data["candidates"][0]["ranking"]["ad"])
+        result["pctr"] = ranking_ad.get("pctr", 0.0)
+        if ranking_ad.get("qs_eval", None):
+            result["pcvr"] = ranking_ad["qs_eval"]["pcvr"]
+        else:
+            result["pcvr"] = ranking_ad.get("pcvr", 0.0)
+    result["pcvr"] = float(result["pcvr"])
+    result["gender"] = log_data["user"].get("gender", "N")
+    result["age_band"] = int(log_data["user"].get("ageBand", -1))
+    result["connection_type"] = log_data["device"].get("connectionType", "N")
+    result["os"] = log_data["device"].get("os", "N")
+    result["device_type"] = log_data["device"].get("deviceType", "N")
+    result["iab_category"] = log_data["candidates"][0].get("creativeCategories", [])
+    result["creative_id"] = int(log_data["candidates"][0].get("creativeId", -1))
+    result["group_id"] = int(log_data["candidates"][0].get("adGroupId", -1))
+    result["account_id"] = int(log_data["candidates"][0].get("adAccountId", -1))
+    result["image_hash"] = log_data["candidates"][0]["creativeHash"]
+    result["image_width"] = str(log_data["candidates"][0].get("imageWidth", "N"))
+    result["image_height"] = str(log_data["candidates"][0].get("imageHeight", "N"))
+    result["image_width_height"] = result["image_width"] + "*" + result["image_height"]
+    result["slot"] = log_data["ssp"]["tagId"]
+    result["raw_slot"] = log_data["ssp"]["tagId"]
+    result["adid"] = log_data["device"].get("adId", "").lower() if not lmt else ""
+    result["aid"] = log_data["user"].get("id", "").lower() if not dnt else ""
+    if a2Gender:
+        result["gender"] = "N"
+    if a2AgeBand or result["age_band"] <= 0:
+        result["age_band"] = -1
+    return pyspark.sql.Row(**result)

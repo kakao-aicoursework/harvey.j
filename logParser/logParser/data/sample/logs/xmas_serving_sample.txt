@@ -1,0 +1,187 @@
+{
+    "requestId": "aed969fc-e6f0-4345-b626-74b6beb86a8e",
+    "dspRequestId": "aed969fc-e6f0-4345-b626-74b6beb86a8e",
+    "dttm": "20230114 075959 809",
+    "adUnitId": "0Qv72",
+    "networkType": "DAUM",
+    "protocolVer": "SDK_BANNER",
+    "uri": "/sdk/banner?id=0Qv72&cnt=1&pxratio=3&pwidth=360&pheight=740&containerid=adWrap_channel_funnwebtoon&ppi=96&lmt=N&containerwidth=0&test=N&ctag=%7B%7D&sdktype=web&sdkver=4.9.0&secretmode=N&network=2&surl=https%3A%2F%2Fm.daum.net%2F%3Fview%3Dchannel_funnwebtoon%26focusCategoryID%3Dnews&cookiedisabled=N&rfseq=1&os=android&osver=9&browser=chrome&browserver=108",
+    "sdkType": "web",
+    "sdkVer": "4.9.0",
+    "ip": "1.226.106.158",
+    "ua": "Mozilla/5.0 (Linux; Android 9; SM-G950N Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36 DaumApps/6.9.35 DaumDevice/mobile",
+    "referer": "https://m.daum.net/?view=channel_funnwebtoon&focusCategoryID=news",
+    "adId": "fd73fe28-bfab-47ae-bcaf-92b8f2c99787",
+    "aId": "bec023a9aa514c60a94f4d305dea363c",
+    "cnt": 1,
+    "cTag": "{}",
+    "isSecure": true,
+    "xmas": {
+        "host": "adnet-xmas-a01.dakao.io"
+    },
+    "elapsedTime": 217,
+    "status": "OK",
+    "adCnt": 1,
+    "isHouseAd": false,
+    "isValidAId": true,
+    "aIdTs": 1643185538526,
+    "mediation": [{
+        "dspId": "WIDERPLANET",
+        "medDSpId": "WIDERPLANET",
+        "elapsedTime": 13,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "NO_BID_SIGNAL",
+        "result": [{
+            "bidPrice": 0.0,
+            "bidfloor": 100.0
+        }]
+    }, {
+        "dspId": "CRITEO",
+        "medDSpId": "CRITEO_NEW",
+        "elapsedTime": 67,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "NO_BID_SIGNAL",
+        "result": [{
+            "bidPrice": 0.0,
+            "bidfloor": 100.0
+        }]
+    }, {
+        "dspId": "ENLIPLE",
+        "medDSpId": "ENLIPLE",
+        "elapsedTime": 16,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "NO_BID_SIGNAL",
+        "result": [{
+            "bidPrice": 0.0,
+            "bidfloor": 100.0
+        }]
+    }, {
+        "dspId": "TRADINGWORKS",
+        "medDSpId": "TRADINGWORKS",
+        "elapsedTime": 171,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "NO_BID_SIGNAL",
+        "result": [{
+            "bidPrice": 0.0,
+            "bidfloor": 100.0
+        }]
+    }, {
+        "dspId": "KEYWORDAD",
+        "medDSpId": "KAAS_CM",
+        "elapsedTime": 25,
+        "plcmtcnt": 1,
+        "bidfloor": 0.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "BID",
+        "result": [{
+            "bidId": "f5b867aa-5506-4425-bee2-548310f5dfcf1",
+            "bidPrice": 5.3269579049999995,
+            "adomain": "https://smartstore.naver.com/royalcanin",
+            "bidfloor": 0.0,
+            "priceFloor": 2.80416462
+        }]
+    }, {
+        "dspId": "MOLOCO",
+        "medDSpId": "MOLOCO",
+        "elapsedTime": 185,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "NO_BID_SIGNAL",
+        "result": [{
+            "bidPrice": 0.0,
+            "bidfloor": 100.0
+        }]
+    }, {
+        "dspId": "DABLE",
+        "medDSpId": "DABLE",
+        "elapsedTime": 26,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "NO_BID_SIGNAL",
+        "result": [{
+            "bidPrice": 0.0,
+            "bidfloor": 100.0
+        }]
+    }, {
+        "dspId": "RTB_HOUSE",
+        "medDSpId": "RTB_HOUSE",
+        "elapsedTime": 150,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 1,
+        "transactionStatus": "OK",
+        "bidStatus": "BID",
+        "result": [{
+            "bidId": "20230113_yRpqOG6bYaFiJTbIMiG9",
+            "bidPrice": 363.19609430295304,
+            "adomain": "coupang.com",
+            "win": true,
+            "closePrice": 363.19609430295304,
+            "adType": "Banner",
+            "w": 320,
+            "h": 206,
+            "templateSeq": 86,
+            "bidfloor": 100.0
+        }]
+    }, {
+        "dspId": "MOMENT",
+        "medDSpId": "MOMENT",
+        "elapsedTime": 50,
+        "plcmtcnt": 1,
+        "bidfloor": 0.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "BID",
+        "result": [{
+            "bidId": "20230114075959_NMto7",
+            "bidPrice": 130.91775588989256,
+            "bidfloor": 0.0,
+            "priceFloor": 122.68050000000001
+        }]
+    }, {
+        "dspId": "APPIER",
+        "medDSpId": "APPIER_NEW",
+        "elapsedTime": 182,
+        "plcmtcnt": 1,
+        "bidfloor": 100.0,
+        "at": 2,
+        "transactionStatus": "OK",
+        "bidStatus": "BID",
+        "result": [{
+            "bidId": "lYf4iFEdAQSnJv_nb-LBYw",
+            "bidPrice": 328.5271552600175,
+            "adomain": "coupang.com",
+            "bidfloor": 100.0
+        }]
+    }],
+    "dsprSync": true,
+    "isAccId": false,
+    "isEacId": false,
+    "isOnlyAppkeyAppuserid": false,
+    "numValidBidders": 4,
+    "mediationTest": {
+        "bidfloorTestId": "test1"
+    },
+    "mediationTestExt": {
+        "cookieDisabled": "N",
+        "secretMode": "N",
+        "network": "2"
+    }
+}

@@ -1,0 +1,12 @@
+A user asks you <question> to get how to parse logs.
+<question>
+{question}
+</question>
+
+Your job is to find log source from which the user wants to parse from the <question> above.
+The source you are looking for is one of [serving, bid, win, click, conversion].
+You are allowed to just select one from the list.
+
+<NOTE> Just answer with one word of the source.
+
+Answer:

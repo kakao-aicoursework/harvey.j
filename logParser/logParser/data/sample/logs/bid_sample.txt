@@ -1,0 +1,195 @@
+{
+  "@timestamp": "2023-05-26T05:30:40.889Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "_doc",
+    "version": "7.5.0",
+    "topic": "iris-bid-v2"
+  },
+  "tags": [
+    "iris-bid"
+  ],
+  "agent": {
+    "ephemeral_id": "c3beb588-6cf3-4924-89dc-9635bc6b5974",
+    "hostname": "dkosv3-idea-anyang-worker-h2kg",
+    "id": "e7bedad2-dce2-4d02-a27d-5acbc2ecd1a7",
+    "version": "7.5.0",
+    "type": "filebeat"
+  },
+  "payload": {
+    "device": {
+      "osVersion": "11",
+      "deviceType": "Android",
+      "connectionType": "Cellular",
+      "isMobile": true,
+      "os": "android",
+      "ua": "Dalvik/2.1.0 (Linux; U; Android 11; SM-A226L Build/RP1A.200720.012)",
+      "sdkType": "adx",
+      "sdkVer": "1.0",
+      "model": "SM-A226L",
+      "ip": "106.101.197.125"
+    },
+    "user": {
+      "activatedId": "adid",
+      "gender": "F",
+      "ageBand": "50",
+      "location3": "I10150511",
+      "a2Gender": false,
+      "a2AgeBand": false,
+      "location": "I",
+      "location2": "I1015",
+      "userDomainPolicy": "n"
+    },
+    "ssp": {
+      "auctionType": "SECOND",
+      "networkSecondaryCategories": [
+        "IAB7"
+      ],
+      "sspId": "ADPIE",
+      "impType": "NATIVE",
+      "impTypes": [
+        "NATIVE"
+      ],
+      "requestCount": 1,
+      "bidFloor": 350,
+      "appBundle": "com.cashwalk.cashwalk",
+      "networkCategories": [
+        "IAB7"
+      ],
+      "impCondition": "WIN",
+      "tagId": "DAN-E8GG53xGcmYK57Sn",
+      "sspTagId": "56b4002f7174ea39c74df8aa:com.cashwalk.cashwalk_643f71128c8d1d165b423539"
+    },
+    "candidates": [
+      {
+        "multiplier": 0.3432188303337958,
+        "rankerId": "danke_adpie",
+        "campaignType": "DISPLAY",
+        "creativeUrl": "//t1.daumcdn.net/b2/creative/547124/2d5d25224fba8f58d85200aca6e3ba81.jpg",
+        "creativeCategories": [
+          "DDN22-7"
+        ],
+        "sspPrice": 576.96044921875,
+        "ranking": {
+          "ad": "{\"rank\":1,\"pctr\":0.0029135942,\"pcvr_power\":1.02,\"p_rs\":0.0029135942,\"ctr\":{\"host_name\":\"dnn-predictor-danke-deploy-7c874dd48f-w2rts\",\"bucket\":\"cb4\",\"model\":\"ctr_adpie_ad_v9.2.0\",\"model_time\":\"20230526_1426\",\"es\":0.0029135942,\"ad_ctime\":\"202305261429\"},\"csStrategy\":\"a\",\"ba\":22395,\"metrics\":\"p=0.002914;w=0.002914;pcvr=0.019140660762786865;adpcvr=0.003586500883102417;bucket=vb7;adModel=dp_pur_dnn_cvr_v9.57.0_ad;\",\"qs_eval\":{\"qs\":1.7,\"valid\":true,\"pcvr\":0.01914066,\"adpcvr\":0.0035865009,\"ver_type\":\"v2\",\"bucket\":\"vb7\",\"model\":\"dp_pur_dnn_cvr_v9.59.0\",\"ad_model\":\"dp_pur_dnn_cvr_v9.57.0_ad\",\"ptype\":\"dnn\"},\"wba\":396.0474,\"rwba\":396.0474,\"mab\":{\"score\":0},\"version\":\"v1.49.0\"}"
+        },
+        "campaignId": 1035857,
+        "imageWidth": 1200,
+        "bidAmount": 0,
+        "bucketItemId": "danke_adpie",
+        "walletId": 547124,
+        "creativeId": 22127667,
+        "landingUrl": "https://auau.co.kr/product/detail.html?product_no=452&cafe_mkt=ue_kakao_cbt&utm_source=kakao&utm_medium=cpc&utm_campaign=test&utm_content=kakao_cbt&utm_term=honeys&n_query=cbt_006",
+        "frequencyCapCount": 10,
+        "adAccountId": 547124,
+        "salesCategoryId": 109,
+        "ownerCompanyId": 1,
+        "trackId": "9160517435362724369",
+        "adGroupId": 2755038,
+        "representativeId": 22093885,
+        "frequencyCapType": "AUTO",
+        "ecpm": 1153.9208984375,
+        "creativeHash": "43138e413d0b0c00bcc5563b8f2f5836",
+        "nonTarget": true,
+        "imageHeight": 600,
+        "objectiveValue": "9160517435362724369",
+        "creativeFormat": "IMAGE_NATIVE",
+        "parentSalesCategoryId": 15,
+        "conversionId": "2702f11c1c604fed9e31d59d0f154e57",
+        "minBidAmount": 10,
+        "price": 1153.9208984375,
+        "pcr": 0.002913593053817749,
+        "goal": "CONVERSION",
+        "rankerType": "danke",
+        "serviceCode": "KAKAOMOMENT",
+        "weight": 1,
+        "pricing": "CPC",
+        "bidStrategy": "AUTOBID",
+        "optimizationGoal": "CLICK",
+        "secondPrice": 1069.1,
+        "objectiveDetailType": "PURCHASE",
+        "objectiveType": "PIXEL_AND_SDK",
+        "imageRatioType": "2:1",
+        "filledLandingUrl": "https://tr.ad.daum.net/adpie/clk?scp=${AUCTION_PRICE}&enc=307LkbCQP3Xnx47V3q2zswbMoN3WLa-xgpJSM6sV_JWLs2k0uVQjjNtHcoq0mWaXznIl2oCQQadup5qS--hxlbR0faFU9brKZ8m57IC1KQHBcwXiZC78QEVIyFWBLRaaQOXknVDobreZWmq9pG9X_aPx_f1R3Mq8azoUfHdOByhIp2BPyJ50EqRxUW4B7C9ulQgS8YAI7C2KRI5HPzADRgNHPx0rObYL05WrLi3631XAduUBnDNAoAe7rSU09H5Bw7XuyBMGWaW5d-sfvLTQgHj_tFNHvrpogaXnh08MA-ZxQ5l3EQhN2Ng_l0ug6-q2_hII3qvUEhjCc9kuedNd4gEoIlVuxDek4b0ftMssC5Id9ZShOBV3J-MMFutFEwxocfDNzOEm5bfzVqFwjeNTaWhjxMLYR2NidPBX8-BBlK5GfrSZshoTX3BTF4DxNO36V3FXFaxejQ2EQJXcykEIRfxvmKIoHtmzJXNDfA9m-zOGPtxFduiMWxSBGLWO823HcHoN9rvznW9mcys0GNLucSeUbbWpn2kZ-gME_FjnVQSwiwzU9tWpFQQ1TEvg_15nJZH6v46kEWRVRmVY22TmPenfefE22tXNwgoGojw3LB6TDLmlmxtAKJ7JSkkDZdKkpugiDZZsR3BRlgC1KXid3zCwzalgmxR7UELSwSKzC0lFfRc2sTrWncaq8_BkCTf89THw4hzQKj-2SJgt1cX2pQ&signature=7e8b93a4c76031f3bad01c9c89e02689&lc=1",
+        "advertiserId": 1,
+        "sspSecondPrice": 534.55,
+        "ideaPrice": {
+          "ecpm": 986.7960149999999,
+          "second": 914.260056081081,
+          "emaprice": 986.7960149999999,
+          "modelprice": 2108.888937611766
+        },
+        "adGroupDailyBudget": 500000
+      }
+    ],
+    "rank": {
+      "s2_cnt": "3327",
+      "s2_valid_cnt": "767",
+      "metrics": "{\"version\":\"v1.100.1\",\"host_name\":\"adpie-ranker-danke-deploy-86756c9cc-4gldl\",\"metrics\":\"up=0;at=adpie;\",\"random\":{\"bucket\":\"rb0\",\"random\":false},\"selection\":{\"totalCnt\":3280,\"isOver\":false,\"allCnt\":3280,\"moCnt\":0,\"baCnt\":0,\"rnCnt\":0,\"notCgCnt\":0,\"usedSet\":\"not_used\",\"bucket\":\"rs9\",\"model\":\"\",\"cpmAdCnt\":0,\"cpcAdCnt\":3272,\"cpaAdCnt\":0,\"hqDnnQseAdCnt\":8,\"hqFtrlQseAdCnt\":0,\"cpvAdCnt\":0,\"autobidConversionAdCnt\":0},\"predictor\":{\"term\":150,\"predictCnt\":3280,\"ctr_predictor\":\"dnn\",\"cvr_predictor\":\"dnn\",\"vpr_predictor\":\"dnn\"},\"atom\":true,\"user\":{\"adid_tag_type\":\"dnn,ftrl\",\"aid_tag_type\":\"\",\"accid_tag_type\":\"\",\"adIdTagError\":\"\",\"aIdTagError\":\"dnn:N,ftrl:N\",\"accIdTagError\":\"\",\"viewHeavy\":false},\"ranking_type\":{\"type\":\"ad\"},\"mab_predictor\":{\"version\":\"\",\"error\":false,\"hostName\":\"\",\"bucket\":\"\",\"model\":\"\"},\"apm\":{\"apm\":\"ab2\"},\"autopilot\":{\"CONVERSION\":{\"CPC\":{\"bucket\":\"ab8\",\"model\":\"\",\"term_id\":86,\"term_date\":\"20230526\"}},\"VISITING\":{\"CPC\":{\"bucket\":\"ab7\",\"model\":\"\",\"term_id\":86,\"term_date\":\"20230526\"}}},\"groupSelection\":{\"reqGroupCnt\":721,\"atomFilterGroupCnt\":636,\"filterGroupCnt\":0,\"qsDnnQseGroupCnt\":0,\"qsFtrlQseGroupCnt\":0,\"autobidConversionGroupCnt\":0,\"cpmGroupCnt\":0,\"cpcGroupCnt\":0,\"cpaGroupCnt\":0,\"cpvGroupCnt\":0,\"errGroupCnt\":0},\"ase\":{\"bucket\":\"ab6\"},\"lqtf\":{\"bucket\":\"ab6\",\"ecpm_cap\":false},\"groupFreqCount\":{\"freqCount\":null},\"autobid_winner\":{\"bucket\":\"ab3\",\"pwr\":0.5,\"dr\":1,\"ecpm\":1153.9209,\"model\":\"dr_adpie_ecpmopt_v9.0.0_copy\",\"model_time\":\"20230411_1800\",\"n_other_dsp\":0}}"
+    },
+    "isFromPre": false,
+    "request": {
+      "remoteAddr": "10.61.59.229",
+      "bucket": "IDEA-DKOS",
+      "segments": {
+        "IT": 7,
+        "PRE_FILTER": 6,
+        "RRRSTATE": 13,
+        "LISTEN": 8,
+        "RANKER_TIMEOUT_REMAINS": 192,
+        "FREQ_DATA": 0,
+        "2TAB_FREQ_REDIS": 0,
+        "FREQ_REDIS": 0,
+        "PREPARE_FILTER": 1,
+        "2TAB_HIDE_REDIS": 0,
+        "RANKER_STATE": 15,
+        "AGT_DATA": 8,
+        "HIDE_REDIS": 0,
+        "REACH_FREQ_REDIS": 0,
+        "REACH_FREQ_DATA": 0,
+        "EXTERNAL_DATA": 8,
+        "TOTAL": 34,
+        "HIDE_DATA": 0,
+        "RD_SESSION": 0
+      },
+      "ideaDesc": {},
+      "ver": "ADPIE-1.0.0",
+      "host": "idea-adserver-74c9dd9686-2q4d4",
+      "node": "dkosv3-idea-anyang-worker-h2kg",
+      "status": "BID",
+      "elapsed": 34
+    },
+    "dsp": {
+      "responseCount": 1,
+      "selectionCount": 50,
+      "filteredCount": 0,
+      "rankerIds": [
+        "danke_adpie"
+      ],
+      "placement": "NETWORK",
+      "creativeFormats": [
+        "NATIVE"
+      ]
+    },
+    "from": "IDEA-DKOS",
+    "bid": {
+      "bidResponseId": "6377f0d381424e7e8012ce11f85da58a",
+      "bidResponseDttm": "20230526 143040 863",
+      "bidRequestId": "1ac3c493-890a-46ca-bd79-50b89dd494d4-DXyS",
+      "bidRequestDttm": "20230526 143040 829"
+    }
+  },
+  "log": {
+    "file": {
+      "path": "/kakao/logs/idea-adserver/acid-bid/bid.log.20230526_14.idea-adserver-74c9dd9686-2q4d4"
+    },
+    "offset": 1263352394
+  },
+  "input": {
+    "type": "log"
+  },
+  "type": "iris-bid-v2",
+  "ecs": {
+    "version": "1.1.0"
+  }
+}
