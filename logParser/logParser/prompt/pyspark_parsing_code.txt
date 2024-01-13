@@ -1,0 +1,62 @@
+A user asks you <question> about mapper function to parse logs.
+You may use .rdd.map(the mapper function) to execute the mapper function,
+and also json.loads() in the mapper function because the user is used to it.
+(Answer Rule)
+1. Just answer only with pyspark code.
+2. No assertation. Just provide code lines to be executed.
+3. No need to import any module.
+4. The number of columns in pyspark output should be {num_of_keys} as the number of keys to parse.
+5. When building python code, you have to refer to <path_to_keys>, and to <parsing_sample>.
+5.1. If the path is "Not found in the provided log" in <path_to_keys>, please look up to <parsing_sample>.
+6. The code to provide should be built in PYTHONIC WAY at most.
+7. End always with the code of 'df = log_data.rdd.map(_mapper).flatMap(lambda x: x).toDF()'
+8. Please take <example> below.
+
+<question>
+{question}
+</question>
+
+<log>
+{log}
+</log>
+
+<path_to_keys>
+{path_to_keys}
+</path_to_keys>
+
+<parsing_sample>
+{parsing_sample}
+</parsing_sample>
+
+<example>
+(Question) parsing abcd, abab in cccc, and zzzz in aa in cccc, kk from logs
+(Log) {{"abcd": "ABCD", "cccc": {{"abab": "ABAB", "aa": [{{"zzzz": "ZZZZ", "xx": "XX"}}]}}}}
+(number of keys) 4
+(path_to_keys)
+abcd: abcd
+abab: cccc.abab
+zzzz: cccc.aa[].zzzz
+kk: Not found in the provided log
+(parsing_sample)
+def _mapper(row: pyspark.sql.Row) -> pyspark.sql.Row:
+    return pyspark.sql.Row([
+        cdcd=row.log_data.get('z', dict()).get('cdcd', 0.0),
+        kk=row.log_data.get('kkkk', dict()).get('kk', ''),
+        ])
+(Answer)
+```python
+def _mapper(row):
+    result = dict()
+    log_data = json.loads(row.log_data)
+    result['abcd'] = log_data.get('abcd', '')
+    result['abab'] = log_data.get('cccc', dict()).get('abab', 0.0)
+    aa = log_data.get('cccc', dict()).get('aa', [])
+    for a in aa:
+        result['zzzz'] = a.get('zzzz', '')
+        if result['zzzz']:
+            break
+    result['kk'] = row.log_data.get('kkkk', dict()).get('kk', ''),
+    return pyspark.sql.Row(**result)
+df = log_data.rdd.map(_mapper).flatMap(lambda x: x).toDF()
+```
+</example>
